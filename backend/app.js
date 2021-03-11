@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const helmet = require("helmet");
 
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require ('./routes/user');
@@ -15,6 +16,7 @@ mongoose.connect('mongodb+srv://Guillaume:BDWftS1pkOncLWYy@cluster0.ihwb5.mongod
 
 const app = express();
 app.use(cors());
+app.use(helmet());
 
 app.use(bodyParser.json());
 
