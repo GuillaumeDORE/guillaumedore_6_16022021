@@ -8,7 +8,9 @@ const helmet = require("helmet");
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require ('./routes/user');
 
-mongoose.connect('mongodb+srv://Guillaume:BDWftS1pkOncLWYy@cluster0.ihwb5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+require('dotenv').config();
+
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}.ihwb5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
 { useNewUrlParser: true, 
   useUnifiedTopology: true })
 .then(() => console.log('Connexion à MongoDB réussie!'))
