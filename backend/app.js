@@ -19,6 +19,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}.ih
 const app = express();
 app.use(cors());
 app.use(helmet());
+app.disable('x-powered-by')
 
 app.use(bodyParser.json());
 
